@@ -1,22 +1,15 @@
 import React, { Component } from "react";
-import { Button } from "antd";
+import Book from "../../compoents/book/book";
 import { rootStore } from "../../store";
-import { onBookListAsynAction } from "../../actions/book.action";
 
 export class About extends Component {
-    getBookList() {
-        rootStore.dispatch(onBookListAsynAction);
-    }
-
     render() {
         return (
             <div>
-                <Button type="primary" onClick={this.getBookList}>查看信息</Button>
-                {
-                    rootStore.getState().bookRedcuer.books.forEach((e: any) => {
-                        return <div>{e.name}</div>
-                    })
-                }
+                <Book></Book>
+                <span>
+                    {rootStore.getState().bookRedcuer.books.map((e: any, index: string) => <div key={index}>{e.name}</div>)}
+                </span>
             </div>
         )
     }

@@ -1,10 +1,18 @@
-import React , { Component } from "react"
+import React, { Component } from "react"
+import { Button } from "antd"
+import { rootStore } from "../../store"
+import { onBookListAsynAction } from "../../actions/book.action"
 
 export default class Book extends Component {
-    render(){
+
+    dispalyInfos() : void {
+        rootStore.dispatch(onBookListAsynAction)
+    }
+
+    render() {
         return (
             <div>
-                书
+                <Button type="primary" onClick={this.dispalyInfos}>查看信息</Button>
             </div>
         )
     }

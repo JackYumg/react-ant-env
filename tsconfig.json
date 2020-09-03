@@ -21,5 +21,6 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "extends": "./tsconfig.app.json"
 }

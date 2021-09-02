@@ -1,1 +1,1 @@
-export { bookList } from "./interface/book/book_api";
+export * from "./interface/book/book_api";
